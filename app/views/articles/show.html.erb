@@ -2,7 +2,9 @@
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
-
+<% if @article.image.attached? %>
+    <%= image_tag @article.image %>
+<% end %>
 <p>
   <strong>Text:</strong>
   <%= @article.text %>
