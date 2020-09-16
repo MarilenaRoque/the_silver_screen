@@ -1,3 +1,30 @@
+body {
+    font-family: 'Lora', serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.text_orange, .text_orange:hover {
+    color: #f96338;
+}
+.text_gray {
+    color: #4e443e;
+}
+
+.navbar-links, .navbar-links:hover {
+    color: #4e443e;
+}
+
+footer {
+    background-color: #4e443e;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
