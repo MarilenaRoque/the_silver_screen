@@ -1,3 +1,48 @@
+body {
+    font-family: 'Lora', serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+h2, .text_orange, .text_orange:hover {
+    color: #f96338;
+}
+a, a:hover, .text_gray {
+    color: #4e443e;
+}
+
+.actions {
+    margin: 20px 0px;
+}
+
+.navbar-links, .navbar-links:hover {
+    color: #4e443e;
+}
+
+.form-wrapper {
+    display: block;
+    width: 20%;
+    margin: auto;
+}
+
+footer {
+    background-color: #4e443e;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
