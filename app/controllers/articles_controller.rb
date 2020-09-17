@@ -14,8 +14,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/new
   def new
-    @article = Article.new
     @categories = Category.all
+    @article = Article.new
   end
 
   # GET /articles/1/edit
@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    @categories = Category.all
     @article = current_user.articles.new(article_params)
 
     respond_to do |format|
