@@ -2,7 +2,9 @@ body {
     font-family: 'Lora', serif;
     min-height: 100vh;
     position: relative;
+    padding-bottom: 50px;
 }
+
 
 ul {
     list-style-type: none;
@@ -34,11 +36,46 @@ a, a:hover, .text_gray {
     margin: auto;
 }
 
+.category-image {
+    height: 30vh;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
+}
+
+.category-image a{
+    font-weight: bolder;
+    color: white;
+    font-family: 'Arimo', sans-serif;
+    letter-spacing: 1.5px;
+}
+
 footer {
     background-color: #4e443e;
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.first-row {
+    height: 60vh;
+}
+
+.effect {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #f9e83d;
+}
+
+.header-effect:hover {
+    text-decoration: none;
+}
+
+.header-effect:hover + .effect {
+  width: 75px;
+  transition: width 1.5s;
 }
 
 
