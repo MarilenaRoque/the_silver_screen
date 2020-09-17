@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :authentication_keys => [:username]
   validates_uniqueness_of :username
+  validates :username, presence: true
   has_many :articles, class_name: 'Article', foreign_key: 'author_id'
 
 end

@@ -3,6 +3,8 @@ class Article < ApplicationRecord
     has_one_attached :image
     has_and_belongs_to_many :categories, class_name: "Category"
     validates :categories_list, presence: true
+    validates :title, length: { minimum: 10 }
+    validates :text, length: { minimum: 15 }
 
 
     def categories_list

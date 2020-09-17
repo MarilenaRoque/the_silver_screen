@@ -3,7 +3,7 @@
   <%= form_with(model: article, local: true) do |form| %>
     <% if article.errors.any? %>
       <div id="error_explanation">
-        <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+        <p><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</p>
 
         <ul>
           <% article.errors.full_messages.each do |message| %>
@@ -27,7 +27,7 @@
       <%= form.label "Categories" %><br>
       <% @categories.each do |c| %>
         <tr>
-          <td><%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %></td>
+          <td><%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %>
           <%= h c.name -%>
         </tr>
       <% end %>
