@@ -22,8 +22,19 @@
       <%= form.label :image %><br>
       <%= form.file_field :image %>
     </div>
-  
     
+    <div class="field">
+      <%= form.label "Categories" %><br>
+      <% @categories.each do |c| %>
+        <tr>
+          <td><%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %></td>
+          <%= h c.name -%>
+        </tr>
+      <% end %>
+    </div>
+
+    <p><%= link_to "CREATE NEW CATEGORY", new_category_path, :class => "pr-2 navbar-links", target: :_blank %> </p>
+
 
     <div class="field">
       <%= form.label :text %><br>
