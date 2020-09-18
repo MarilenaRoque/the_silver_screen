@@ -1,16 +1,15 @@
 <main class="container-fluid">
 	<div class="row">
-		<article class="first-row main-article col-9 p-0">
+		<article class="first-row main-article col-12 p-0">
 			<div class="cover-gradient">
 			</div>
 		</article>
-		<div class="first-row weather col-3 p-0"></div>
 		<% @categories.each do |c| %>
 			<div class= "col-3 p-0 category-image" style="background-image: url(<%= last_article_image(c) %>)">
 				<div class="cover-img">
 					<%= link_to "#{c.name}", category_path(c), :class => "category-view header-effect"%>
 					<span class= "effect"></span>
-					<p class= "white-text" ><%= last_article_title(c) %></p>
+					<p class= "article-title text-white" ><%= last_article_title(c) %></p>
 				</div>
 			</div>
 		<% end %>

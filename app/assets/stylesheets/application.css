@@ -5,6 +5,9 @@ body {
     padding-bottom: 50px;
 }
 
+.article-title {
+    font-family: 'Arimo', sans-serif;
+}
 
 ul {
     list-style-type: none;
@@ -88,12 +91,6 @@ footer {
 .header-effect:hover + .effect {
   width: 75px;
   transition: width 1.5s;
-}
-
-.weather {
-    background-image: url('holywood.png');
-    background-size: cover;
-    background-position: center;
 }
 
 
