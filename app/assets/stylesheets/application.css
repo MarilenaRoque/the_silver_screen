@@ -1,12 +1,11 @@
 body {
     font-family: 'Lora', serif;
     min-height: 100vh;
-    position: relative;
-    padding-bottom: 50px;
 }
 
 .article-title {
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Merriweather', serif;
+    text-shadow: 2px 2px 8px #000000;
 }
 
 ul {
@@ -17,6 +16,14 @@ h2 {
     text-align: center;
     margin-bottom: 30px;
     text-transform: uppercase;
+}
+
+
+.main-title {
+    text-shadow: 2px 2px 8px #000;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 900;
 }
 
 h2, .text_orange, .text_orange:hover {
@@ -39,9 +46,15 @@ a, a:hover, .text_gray {
     margin: auto;
 }
 
+.main-article {
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .category-image {
-    height: 30vh;
-    background-position: center bottom;
+    height: 27vh;
+    background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -54,27 +67,27 @@ a, a:hover, .text_gray {
 }
 
 .cover-img {
-  background-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 50%);
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%);
   width: 100%;
   height: 100%;
   padding: 15px;
 }
 
 .cover-gradient {
-  background-image: linear-gradient(0deg, rgba(245,150,7,0.4) 0%, rgba(245,150,7,0.3) 7%, rgba(245,150,7,0.1) 81%);
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%);
   width: 100%;
   height: 100%;
 }
 
 footer {
     background-color: #4e443e;
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }
 
 .first-row {
-    height: 60vh;
+    height: 57vh;
 }
 
 .effect {
