@@ -30,4 +30,12 @@ module CategoriesHelper
 			(render partial: 'main_default').html_safe
 		end
 	end
+
+	def order(i)
+		if (i % 4) >= 2 then
+			'order-1' 
+		else
+			'order-2'
+		end
+	end
 end

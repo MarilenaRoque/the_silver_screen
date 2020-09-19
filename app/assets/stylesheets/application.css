@@ -1,6 +1,5 @@
 body {
     font-family: 'Lora', serif;
-    min-height: 100vh;
 }
 
 .article-title {
@@ -10,6 +9,10 @@ body {
 
 ul {
     list-style-type: none;
+}
+
+.row {
+  margin: 0px;
 }
 
 h2 {
@@ -104,6 +107,11 @@ footer {
 .header-effect:hover + .effect {
   width: 75px;
   transition: width 1.5s;
+}
+
+.image-square, .text-square {
+    height: 40vh
+    ;
 }
 
 

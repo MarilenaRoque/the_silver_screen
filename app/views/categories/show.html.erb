@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<p>
-  <strong>Priority:</strong>
-  <%= @category.priority %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="row">
+	<% @articles.each_with_index do |article, i| %>
+	  <div class = "col-6 row p-0">
+	    <div class="col-6 image-square order-2 p-0" style="background-image: url(<%= url_for(article.image) %>)">
+	    	<div class="cover-img p-0">
+	    	</div>
+	    </div>
+	    <div class ="col-6 text-square <%= order(i) %> px-3 pb-3">
+	    	<p class="text_orange"><%= @category.name %></p>
+	    	<p><%= article.title %></p>
+	    	<p><%= article.text %></p>
+		</div>
+	  </div>
+	<% end %>
