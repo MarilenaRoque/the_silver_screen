@@ -1,6 +1,7 @@
 body {
     font-family: 'Lora', serif;
     min-height: 100vh;
+    padding-bottom: 45px;
 }
 
 .article-title {
@@ -85,7 +86,7 @@ a, a:hover, .text_gray {
 
 footer {
     background-color: #4e443e;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }

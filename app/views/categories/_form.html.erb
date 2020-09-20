@@ -1,3 +1,4 @@
+<div class="form-wrapper">
 <%= form_with(model: category, local: true) do |form| %>
   <% if category.errors.any? %>
     <div id="error_explanation">
@@ -12,12 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name %></br>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :priority %>
+    <%= form.label :priority %></br>
     <%= form.number_field :priority %>
   </div>
 
@@ -25,3 +26,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>
