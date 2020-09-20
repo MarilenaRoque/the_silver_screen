@@ -100,18 +100,41 @@ footer {
   background-color: #f9e83d;
 }
 
+.effect-orange {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #f96338;
+}
+
 .header-effect:hover {
     text-decoration: none;
 }
 
-.header-effect:hover + .effect {
+.category-name {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.article-title-show {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.header-effect:hover + .effect, .header-effect:hover + .effect-orange {
   width: 75px;
   transition: width 1.5s;
 }
 
+.number {
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    display: inline-block;
+    padding-right: 8px;
+}
+
 .image-square, .text-square {
-    height: 40vh
-    ;
+    height: 40vh;
 }
 
 

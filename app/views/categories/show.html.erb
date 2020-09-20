@@ -6,10 +6,19 @@
 	    	<div class="cover-img p-0">
 	    	</div>
 	    </div>
-	    <div class ="col-6 text-square <%= order(i) %> px-3 pb-3">
-	    	<p class="text_orange"><%= @category.name %></p>
-	    	<p><%= article.title %></p>
-	    	<p><%= article.text %></p>
+	    <div class ="d-flex flex-column col-6 text-square <%= order(i) %> px-3 pb-3 pt-1 justify-content-between">
+	    	<div>
+		    	<%= link_to "#{@category.name}", category_path(@category), :class => "text-uppercase text_orange header-effect category-name"%>
+		    	<span class= "effect-orange mb-3
+		    	"></span>
+		    	<p class="article-title-show"><%= article.title %></p>
+		    	<p><%= article.text %></p>
+	    	</div>
+	    	<div>
+	    		<p class="text-right"><span class="number ">50</span><%= image_tag("vote.png", height: '32', width: '23
+	    		')%></p>
+	    	</div>
+
 		</div>
 	  </div>
 	<% end %>
