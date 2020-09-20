@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @articles = Category.find(params[:id]).articles
+    @articles = Category.find(params[:id]).articles.includes(:votes)
   end
 
   # GET /categories/new

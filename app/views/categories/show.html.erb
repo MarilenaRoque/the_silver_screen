@@ -15,10 +15,13 @@
 		    	<p><%= article.text %></p>
 	    	</div>
 	    	<div>
-	    		<p class="text-right"><span class="number ">50</span><%= image_tag("vote.png", height: '32', width: '23
-	    		')%></p>
+				<p class="text-right">
+					<span class="number ">50</span>
+					<%= link_to(image_tag("vote.png", height: '32', width: '23'), votes_path(:article_id => article.id), method: :post) %>
+	    		</p>
 	    	</div>
 
 		</div>
 	  </div>
 	<% end %>
+</div>
