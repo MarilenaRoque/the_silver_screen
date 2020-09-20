@@ -23,9 +23,8 @@ module CategoriesHelper
 	end
 
 	def most_voted_partial
-		@most_voted_article = Article.last ###### Need to change this with the new feature
-		if !@most_voted_article.nil?
-			(render 'main_article', :most_voted => @most_voted_article).html_safe
+		if !@most_voted.nil?
+			(render 'main_article', :most_voted => @most_voted).html_safe
 		else
 			(render partial: 'main_default').html_safe
 		end

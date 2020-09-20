@@ -5,6 +5,9 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all.order(priority: :desc).includes(:articles)
+    id = Article.all.joins(:votes).group(:id).count.max_by { |_k, v| v }
+    @most_voted = Article.find(id[0])
+
   end
 
   # GET /categories/1

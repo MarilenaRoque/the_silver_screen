@@ -5,11 +5,11 @@ class VotesController < ApplicationController
     
     def create
        @vote = current_user.votes.build(article_id: params[:article_id])
-       redirect_to '/categories' if @vote.save
+        redirect_to category_path(params[:category_id]) if @vote.save
     end
 
     def destroy
         @vote = current_user.votes.find_by(article_id: params[:article_id])
-        redirect_to '/categories' if @vote.destroy
+        redirect_to category_path(params[:category_id]) if @vote.destroy
     end
 end

@@ -1,6 +1,6 @@
 <article class="first-row main-article col-12 p-0" style="background-image: url(<%= (url_for(most_voted.image)) %>)">
     <div class="cover-gradient p-4 d-flex flex-column justify-content-end">
-        <p class="main-title text_orange text-right text-uppercase"> <%= most_voted.title %> </p> 
-        <p class = "article_text text-right text-white"> <%= truncate("#{most_voted.text}", :length => 135) %> </p>
+        <p class="main-title text_orange text-right text-uppercase"> <%= @most_voted.title %> </p> 
+        <p class = "article_text text-right text-white"> <%= truncate("#{@most_voted.text}", :length => 135) %> </p>
     </div>
 </article>
