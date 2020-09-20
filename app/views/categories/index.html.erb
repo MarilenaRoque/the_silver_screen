@@ -1,29 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Categories</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Priority</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
-        <td><%= category.priority %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Category', new_category_path %>
+<main class="container-fluid p-0">
+	<div class="row">
+		<%= most_voted_partial %>
+		<% @categories.each do |c| %>
+			<div class= "col-3 p-0 category-image" style="background-image: url(<%= last_article_image(c) %>)">
+				<div class="cover-img d-flex flex-column justify-content-between">
+					<div>
+						<%= link_to "#{c.name}", category_path(c), :class => "text-uppercase article-title header-effect"%>
+						<span class= "effect"></span>
+					</div>
+					<p class= "text-right article-title text-white" ><%= last_article_title(c) %></p>
+				</div>
+			</div>
+		<% end %>
+		</div>
+	</div>
+</main>
