@@ -26,10 +26,10 @@
     <div class="field">
       <%= form.label "Categories" %><br>
       <% @categories.each do |c| %>
-        <tr>
-          <td><%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %>
+        <span class="mr-2">
+          <%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %>
           <%= h c.name -%>
-        </tr>
+        </span>
       <% end %>
     </div>
 

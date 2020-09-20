@@ -5,13 +5,16 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all.order(priority: :desc).includes(:articles)
+    id = Article.all.joins(:votes).group(:id).count.max_by { |_k, v| v }
+    @most_voted = Article.find(id[0])
+
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @articles = Category.find(params[:id]).articles
+    @articles = Category.find(params[:id]).articles.includes(:votes)
   end
 
   # GET /categories/new

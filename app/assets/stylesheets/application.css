@@ -1,5 +1,6 @@
 body {
     font-family: 'Lora', serif;
+    min-height: 100vh;
 }
 
 .article-title {
