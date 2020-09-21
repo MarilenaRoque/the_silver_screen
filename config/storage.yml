@@ -14,7 +14,7 @@ google:
 google_dev:
   service: GCS
   project: thesilverscreen
-  credentials: <%= Rails.application.credentials.gcs_todo_pic.to_json %>
+  credentials: <%= Rails.root.join("config/secrets/todo-pic.json") %>
   bucket: silverscreen
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
