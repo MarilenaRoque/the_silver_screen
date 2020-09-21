@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-  before_action :set_bookmark, only: [:show, :edit, :update, :destroy]
 
   # GET /bookmarks
   # GET /bookmarks.json
@@ -14,7 +13,7 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/new
   def new
-    @bookmark = Bookmark.new
+     @bookmark = current_user.bookmarks.build(article_id: params[:article_id])
   end
 
   # GET /bookmarks/1/edit
@@ -24,12 +23,12 @@ class BookmarksController < ApplicationController
   # POST /bookmarks
   # POST /bookmarks.json
   def create
-    @bookmark = Bookmark.new(bookmark_params)
-
+    @bookmark = current_user.bookmarks.build(article_id: params[:article_id])
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
+        format.html { redirect_to category_path(params[:category_id]), notice: 'Bookmark was successfully created.' }
         format.json { render :show, status: :created, location: @bookmark }
+        
       else
         format.html { render :new }
         format.json { render json: @bookmark.errors, status: :unprocessable_entity }
@@ -54,18 +53,16 @@ class BookmarksController < ApplicationController
   # DELETE /bookmarks/1
   # DELETE /bookmarks/1.json
   def destroy
+    @bookmark = current_user.bookmarks.find_by(article_id: params[:article_id])
     @bookmark.destroy
     respond_to do |format|
-      format.html { redirect_to bookmarks_url, notice: 'Bookmark was successfully destroyed.' }
+      format.html { redirect_to category_path(params[:category_id]), notice: 'Bookmark was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_bookmark
-      @bookmark = Bookmark.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def bookmark_params

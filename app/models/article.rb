@@ -3,6 +3,7 @@ class Article < ApplicationRecord
     has_one_attached :image
     has_and_belongs_to_many :categories, class_name: "Category"
     has_many :votes
+    has_many :bookmarks
     validates :categories_list, presence: true
     validates :image, presence: true
     validates :title, length: { minimum: 10 }
