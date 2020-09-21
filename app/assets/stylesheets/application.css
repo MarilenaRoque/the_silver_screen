@@ -9,6 +9,10 @@ body {
     text-shadow: 2px 2px 8px #000000;
 }
 
+.text-show {
+    width: 80%;
+}
+
 ul {
     list-style-type: none;
 }
