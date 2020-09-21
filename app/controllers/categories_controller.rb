@@ -6,7 +6,11 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all.order(priority: :desc).includes(:articles)
     id = Article.all.joins(:votes).group(:id).count.max_by { |_k, v| v }
-    @most_voted = Article.find(id[0])
+    if id.nil?
+      @most_voted = nil
+    else
+      @most_voted = Article.find(id[0])
+    end
 
   end
 
