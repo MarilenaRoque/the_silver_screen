@@ -6,11 +6,16 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
-azure:
-  service: AzureStorage
-  storage_account_name: <%= ENV['STORAGE_ACCOUNT_NAME'] %>
-  storage_access_key: <%= ENV['STORAGE_ACCESS_KEY'] %>
-  container: <%= ENV['STORAGE_CONTAINER'] %>
+google:
+  service: GCS
+  project: todo-pic
+  credentials: <%= ENV['GOOGLE_APPLICATION_CREDENTIALS'].as_json %>
+  bucket: silverscreen
+google_dev:
+  service: GCS
+  project: todo-pic
+  credentials: <%= Rails.root.join("config/secrets/todo-pic.json") %>
+  bucket: silverscreen
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:

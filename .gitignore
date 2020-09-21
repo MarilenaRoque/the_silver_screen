@@ -13,6 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 .env
+/config/secrets/*/config/secrets/*
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

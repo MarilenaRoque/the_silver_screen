@@ -139,6 +139,10 @@ footer {
     padding-right: 8px;
 }
 
+.article-text {
+    max-height: 30%;
+}
+
 .image-square, .text-square {
     height: 40vh;
 }
