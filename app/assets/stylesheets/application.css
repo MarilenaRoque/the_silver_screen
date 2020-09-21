@@ -10,7 +10,8 @@ body {
 }
 
 .text-show {
-    width: 80%;
+    width: 70%;
+    text-justify: auto;
 }
 
 ul {
