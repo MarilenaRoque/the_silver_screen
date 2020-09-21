@@ -3,7 +3,7 @@ class BookmarksController < ApplicationController
   # GET /bookmarks
   # GET /bookmarks.json
   def index
-    @bookmarks = current_user.bookmarks.includes(:article)
+    @bookmarks = current_user.bookmarks.includes(:articles)
   end
 
   # GET /bookmarks/1
