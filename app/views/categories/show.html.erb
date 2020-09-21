@@ -12,7 +12,8 @@
 		    	<span class= "effect-orange mb-3
 		    	"></span>
 		    	<p class="article-title-show"><%= article.title %></p>
-		    	<p><%= article.text %></p>
+				<p><%= truncate("#{article.text}", :length => 185) %></p>
+				
 	    	</div>
 	    	<div>
 				<p class="text-right">
