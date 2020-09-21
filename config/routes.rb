@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bookmarks
   resources :categories
   resources :articles
   devise_for :users
