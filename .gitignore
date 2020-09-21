@@ -13,7 +13,7 @@
 !/log/.keep
 !/tmp/.keep
 .env
-/config/secrets/*/config/secrets/*
+/config/secrets/todo-pic.json
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
