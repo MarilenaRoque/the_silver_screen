@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @articles = Category.find(params[:id]).articles.includes(:votes)
+    @articles = Category.find(params[:id]).articles.includes(:votes).order(created_at: :desc)
   end
 
   # GET /categories/new

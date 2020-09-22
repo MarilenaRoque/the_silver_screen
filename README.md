@@ -3,20 +3,23 @@
 > On this project I will develop a blog app, customized with the theme: Movies.
 Design idea by [Nelson Sakwa on Behance](https://www.behance.net/gallery/14500909/liFEsTlye-Magazine-style-Design-Freebie)
 
-## You can access our social media [HERE]()
+## You can access the blog [HERE](https://blogthesilverscreen.herokuapp.com/)
 
-![Timeline View](./app/assets/images/screenshot.png)
+![Index View](./app/assets/images/screenshot.png)
+![Show View](./app/assets/images/screenshot1.png)
+![Bookmarks View](./app/assets/images/screenshot2.png)
 
-## Schema
+## Schema without Extra Feature
 
 ![Schema](./app/assets/images/ERD.png)
 
-The project has 4 Models
+The project has 5 Models
 
 - User
 - Article
 - Vote
 - Category
+- Bookmarks
 
 Associated to each other as described below:
 
@@ -25,6 +28,7 @@ Associated to each other as described below:
 - An Article has zero or many votes
 - A User has zero or many votes
 - A vote belongs to a User and belongs to an Article
+- A bookmark belongs to a User and belongs to an Article
 - A Category has many or zero Articles
 - An article has one or many Categories
 
@@ -37,10 +41,20 @@ If you're no authenticated User, you can
 
 If you are an authenticated User, you can
 
-- See all articles
-- See articles by category
-- Create articles
-- Vote articles
+- The user is presented with the homepage, that includes:
+ 1. Most voted article with full-width image and title in the first row.
+ 2. List of all categories in order of priority. Each category displayed as a square with its name on the top and its most recent article's title in the bottom. The background image is the image of the most recent article in this category.
+
+- Navbar has links to:
+    1. Create a new artice
+    2. Home
+    3. See your favorite articles
+
+- When the User click on a Category
+    1. Display all articles sorted by most recent
+    2. Category and preview text truncated
+    3. Button to vote or unvote
+    4. Button to bookmark or unmark an article
 
 
 ## Built With
