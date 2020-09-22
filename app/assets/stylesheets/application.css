@@ -62,7 +62,7 @@ a, a:hover, .text_gray {
     background-repeat: no-repeat;
 }
 
-.category-image {
+.category-image, .image-square {
     height: 27vh;
     background-position: center top;
     background-size: cover;
