@@ -100,7 +100,6 @@ To get a local copy up and running follow these simple example steps.
 - Linkedin: [roquemarilena](https://www.linkedin.com/in/roquemarilena/)
 
 
-
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
