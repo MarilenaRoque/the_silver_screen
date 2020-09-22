@@ -21,17 +21,17 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:username) }
 
-    it { should validate_uniqueness_of(:username)}
+    it { should validate_uniqueness_of(:username) }
 
-    it { should validate_presence_of(:email)}
+    it { should validate_presence_of(:email) }
 
-    it { should allow_value('test@mail.com').for(:email)}
+    it { should allow_value('test@mail.com').for(:email) }
 
-    it { should_not allow_value('test').for(:email)}
+    it { should_not allow_value('test').for(:email) }
 
-    it { should allow_value('123456').for(:password)}
+    it { should allow_value('123456').for(:password) }
 
-    it { should_not allow_value('123').for(:password)}
+    it { should_not allow_value('123').for(:password) }
   end
 
   describe 'Validation with Subject' do
