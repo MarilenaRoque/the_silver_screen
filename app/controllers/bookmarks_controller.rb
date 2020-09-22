@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-
   # GET /bookmarks
   # GET /bookmarks.json
   def index
@@ -8,17 +7,15 @@ class BookmarksController < ApplicationController
 
   # GET /bookmarks/1
   # GET /bookmarks/1.json
-  def show
-  end
+  def show; end
 
   # GET /bookmarks/new
   def new
-     @bookmark = current_user.bookmarks.build(article_id: params[:article_id])
+    @bookmark = current_user.bookmarks.build(article_id: params[:article_id])
   end
 
   # GET /bookmarks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /bookmarks
   # POST /bookmarks.json
@@ -26,9 +23,12 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmarks.build(article_id: params[:article_id])
     respond_to do |format|
       if @bookmark.save
-        format.html { redirect_to category_path(params[:category_id]), notice: 'Bookmark was successfully created.' }
+        format.html do
+          redirect_to category_path(params[:category_id]),
+                      notice: 'Bookmark was successfully created.'
+        end
         format.json { render :show, status: :created, location: @bookmark }
-        
+
       else
         format.html { render :new }
         format.json { render json: @bookmark.errors, status: :unprocessable_entity }
@@ -62,10 +62,11 @@ class BookmarksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
 
-    # Only allow a list of trusted parameters through.
-    def bookmark_params
-      params.require(:bookmark).permit(:user_id, :article_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+
+  # Only allow a list of trusted parameters through.
+  def bookmark_params
+    params.require(:bookmark).permit(:user_id, :article_id)
+  end
 end

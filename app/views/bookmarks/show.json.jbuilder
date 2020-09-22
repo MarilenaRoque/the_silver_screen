@@ -1,1 +1,1 @@
-json.partial! "bookmarks/bookmark", bookmark: @bookmark
+json.partial! 'bookmarks/bookmark', bookmark: @bookmark
