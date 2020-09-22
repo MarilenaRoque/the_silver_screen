@@ -3,10 +3,10 @@ require 'rails_helper.rb'
 RSpec.describe User, type: :model do
   let(:subject) do
     described_class.new(
-      email: 'test1@mail.com',
+      email: 'test4@mail.com',
       created_at: '2020-09-21 22:35:32',
       updated_at: '2020-09-21 22:35:32',
-      username: 'test1',
+      username: 'test4',
       password: '123456',
       password_confirmation: '123456'
     )
@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
-    it {should validate_presence_of(:username)}
+    it { should validate_presence_of(:username) }
 
     it {should validate_uniqueness_of(:username)}
 

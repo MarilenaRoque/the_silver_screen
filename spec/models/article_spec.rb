@@ -3,10 +3,10 @@ require 'rails_helper.rb'
 RSpec.describe Article, type: :model do
   let(:user) do
     User.create(
-      email: 'test1@mail.com',
+      email: 'test3@mail.com',
       created_at: '2020-09-21 22:35:32',
       updated_at: '2020-09-21 22:35:32',
-      username: 'test1',
+      username: 'test3',
       password: '123456',
       password_confirmation: '123456'
     )

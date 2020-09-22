@@ -25,8 +25,8 @@ end
 describe 'Authenticated User access', type: :feature do
   before :each do
     visit 'users/sign_up'
-    fill_in 'user_username', with: 'test1'
-    fill_in 'user_email', with: 'test1@mail.com'
+    fill_in 'user_username', with: 'test2'
+    fill_in 'user_email', with: 'test2@mail.com'
     fill_in 'user_password', with: '123456'
     fill_in 'user_password_confirmation', with: '123456'
     click_button 'Sign up'
@@ -45,68 +45,6 @@ describe 'Authenticated User access', type: :feature do
   end
 
   it 'Navbar should have username on navbar' do
-    expect(page).to have_content 'test1'
-  end
-end
-
-describe 'Display most voted Article', type: :feature do
-  @user = User.create(
-    email: 'test1@mail.com',
-    created_at: '2020-09-21 22:35:32',
-    updated_at: '2020-09-21 22:35:32',
-    username: 'test1',
-    password: '123456',
-    password_confirmation: '123456'
-  )
-
-  let(:cat1) do
-    Category.create(
-      name: 'Reviews',
-      priority: 3
-    )
-  end
-  let(:cat2) do
-    Category.create(
-      name: 'Actions',
-      priority: 2
-    )
-  end
-
-  it 'Vote Valid' do
-    visit 'users/sign_in'
-    fill_in 'user_username', with: 'test1'
-    fill_in 'user_password', with: '123456'
-    click_button 'Log in'
-    @article = Article.new(
-      title: 'Test Title for tests',
-      text: 'This is a long text, to test the article',
-      author_id: user.id,
-      categories_list: [cat1.id, cat2.id]
-    )
-    @article.image.attach(io: File.open(Rails.root.join('spec', 'models', 'images', 'default.jpg')),
-                          filename: 'default.jpg',
-                          content_type: 'image/jpg')
-    @article.save
-
-    @vote = Vote.create(
-      user_id: user.id,
-      article_id: @article.id
-    )
-    expect(vote).to be_valid
-  end
-
-  it 'Display created category' do
-    visit '/'
-    expect(page).to have_content 'Actions'
-  end
-
-  it 'Display created category' do
-    visit '/'
-    expect(page).to have_content 'Reviews'
-  end
-
-  it 'Display prev of the text of the most voted' do
-    visit '/'
-    expect(page).to have_content 'This is a long text, to test the article'
+    expect(page).to have_content 'test2'
   end
 end
