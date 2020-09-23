@@ -13,9 +13,10 @@
 		    	"></span>
 		    	<p class="article-title-show"><%= article.title %></p>
 				<p><%= truncate("#{article.text}", :length => 120) %></p>
-				
+
 	    	</div>
-	    	<div>
+			<div>
+				<p class="text-right"><strong> <%= article.author.username %></strong></p>
 				<p class="text-right">
 					<span class="mr-2"><%= vote_button(article) %></span>
 					<%= bookmark_button(article) %>
