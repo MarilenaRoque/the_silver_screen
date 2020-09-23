@@ -27,11 +27,8 @@ class BookmarksController < ApplicationController
           redirect_to category_path(params[:category_id]),
                       notice: 'Bookmark was successfully created.'
         end
-        format.json { render :show, status: :created, location: @bookmark }
-
       else
         format.html { render :new }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,10 +39,8 @@ class BookmarksController < ApplicationController
     respond_to do |format|
       if @bookmark.update(bookmark_params)
         format.html { redirect_to @bookmark, notice: 'Bookmark was successfully updated.' }
-        format.json { render :show, status: :ok, location: @bookmark }
       else
         format.html { render :edit }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,9 +52,7 @@ class BookmarksController < ApplicationController
     @bookmark.destroy
     respond_to do |format|
       format.html { redirect_to category_path(params[:category_id]), notice: 'Bookmark was successfully destroyed.' }
-      format.json { head :no_content }
     end
-  end
 
   private
 
