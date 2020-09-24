@@ -1,17 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
-  # GET /articles
-  # GET /articles.json
-  def index
-    @articles = Article.all
-  end
-
-  # GET /articles/1
-  # GET /articles/1.json
-  def show; end
-
-  # GET /articles/new
   def new
     @categories = Category.all
     @article = Article.new
@@ -21,7 +10,6 @@ class ArticlesController < ApplicationController
   def edit; end
 
   # POST /articles
-  # POST /articles.json
   def create
     @categories = Category.all
     @article = current_user.articles.new(article_params)
@@ -36,7 +24,6 @@ class ArticlesController < ApplicationController
   end
 
   # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
       if @article.update(article_params)
@@ -48,7 +35,6 @@ class ArticlesController < ApplicationController
   end
 
   # DELETE /articles/1
-  # DELETE /articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|
