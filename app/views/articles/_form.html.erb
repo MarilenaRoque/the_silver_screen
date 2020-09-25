@@ -28,7 +28,7 @@
       <% @categories.each do |c| %>
         <span class="mr-2">
           <%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %>
-          <%= h c.name -%>
+          <label><%= h c.name -%></label>
         </span>
       <% end %>
     </div>

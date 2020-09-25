@@ -9,10 +9,15 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit; end
 
+  def show; end
+
   # POST /articles
   def create
     @categories = Category.all
     @article = current_user.articles.new(article_params)
+    unless @article.image.attached?
+      @article.image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+    end
 
     respond_to do |format|
       if @article.save
@@ -53,4 +58,5 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text, :image, categories_list: [])
   end
+
 end

@@ -2,11 +2,11 @@ require 'rails_helper.rb'
 
 RSpec.describe User, type: :model do
   let(:subject) do
-    described_class.new(
-      email: 'test4@mail.com',
+    described_class.create(
+      email: 'testx@mail.com',
       created_at: '2020-09-21 22:35:32',
       updated_at: '2020-09-21 22:35:32',
-      username: 'test4',
+      username: 'testx',
       password: '123456',
       password_confirmation: '123456'
     )
@@ -51,7 +51,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'is valid with a valid email' do
-      subject.email = 'test2@mail.com'
+      subject.email = 'valid@mail.com'
       expect(subject).to be_valid
     end
 

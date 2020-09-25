@@ -9,4 +9,5 @@ RSpec.describe Bookmark, type: :model do
   describe 'validations' do
     it { should validate_uniqueness_of(:user_id).scoped_to(:article_id) }
   end
+
 end

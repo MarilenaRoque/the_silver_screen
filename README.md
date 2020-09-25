@@ -74,20 +74,41 @@ Postgres: >=9.5
 To get a local copy up and running follow these simple example steps.
 
 - Clone this repository
+ > `git clone <repo>`
 - Open a terminal on the containing folder of this project
+> `cd <folder>`
+
 
 ### Setup
 
+- Install all the dependencies
+> `bundle install`
 
-- Run 'bundle install' to install the dependencies
-- Set the database using the command 'bin/rake db:migrate'
+- Iniciate your database running
+> `rails db:create`
+
+- Set all the database running
+
+> `rails db:migrate`
+
+### Running tests
+
+This repo contains files to test the validations and associations on models.
+You can run the following command on your terminal to run the tests.
+
+> ` rspec .`
+
+or customize them changing the files inside the spec folder.
 
 
+### Running Locally
 
-### Usage
+- Run the server using the command:
 
-- Run the server using the command 'rails server'
+> `rails server`
+
 - Access http://localhost:3000/ in your browser
+
 - Use the navbar links to explore the features (make sure to create a user to have access to all features)
 
 
