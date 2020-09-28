@@ -30,7 +30,6 @@ class BookmarksController < ApplicationController
 
   private
 
-
   # Only allow a list of trusted parameters through.
   def bookmark_params
     params.require(:bookmark).permit(:user_id, :article_id)

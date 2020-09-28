@@ -16,7 +16,9 @@ class ArticlesController < ApplicationController
     @categories = Category.all
     @article = current_user.articles.new(article_params)
     unless @article.image.attached?
-      @article.image.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpg")), filename: 'default.jpg' , content_type: "image/jpg")
+      @article.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'default.jpg')),
+                            filename: 'default.jpg',
+                            content_type: 'image/jpg')
     end
 
     respond_to do |format|
@@ -58,5 +60,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :text, :image, categories_list: [])
   end
-
 end

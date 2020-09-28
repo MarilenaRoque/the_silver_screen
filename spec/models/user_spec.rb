@@ -1,14 +1,14 @@
 require 'rails_helper.rb'
 
 RSpec.describe User, type: :model do
-  
-    @user = User.create(
-      email: 'tests@mail.com',
-      created_at: '2020-09-21 22:35:32',
-      updated_at: '2020-09-21 22:35:32',
-      username: 'tests',
-      password: '123456',
-      password_confirmation: '123456')
+  @user = User.create(
+    email: 'tests@mail.com',
+    created_at: '2020-09-21 22:35:32',
+    updated_at: '2020-09-21 22:35:32',
+    username: 'tests',
+    password: '123456',
+    password_confirmation: '123456'
+  )
   let(:cat1) do
     Category.create(
       name: 'Reviews',

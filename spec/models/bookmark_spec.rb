@@ -25,19 +25,17 @@ RSpec.describe Bookmark, type: :model do
   end
   let(:art1) do
     Article.create(
-        title: 'Test Title for tests',
-        text: 'This is a long text, to test the article',
-        author_id: user.id,
-        categories_list: [cat1.id, cat2.id],
-      )
-    end
-
+      title: 'Test Title for tests',
+      text: 'This is a long text, to test the article',
+      author_id: user.id,
+      categories_list: [cat1.id, cat2.id]
+    )
+  end
 
   describe 'associations' do
     it { should belong_to(:user) }
     it { should belong_to(:article) }
   end
-  
 
   describe 'validations' do
     it { should validate_uniqueness_of(:user_id).scoped_to(:article_id) }
@@ -46,7 +44,7 @@ RSpec.describe Bookmark, type: :model do
   describe 'Bookmarks attributes' do
     before(:each) do
       art1.image.attach(io: File.open(Rails.root.join('spec', 'models', 'images', 'default.jpg')),
-                           filename: 'default.jpg', content_type: 'image/jpg')
+                        filename: 'default.jpg', content_type: 'image/jpg')
       art1.save
     end
     it 'should be valid with valid attributes' do
@@ -68,15 +66,11 @@ RSpec.describe Bookmark, type: :model do
     end
 
     it 'each combination of foreign keys should be unique' do
-      bookmark = described_class.create(article_id: art1.id,
-                                        user_id: user.id)
+      described_class.create(article_id: art1.id,
+                             user_id: user.id)
       bookmark_copy = described_class.create(article_id: art1.id,
-                                        user_id: user.id)
+                                             user_id: user.id)
       expect(bookmark_copy).to_not be_valid
     end
-
-
   end
-
-
 end
