@@ -1,0 +1,17 @@
+<main class="container-fluid p-0">
+	<div class="row">
+		<%= most_voted_partial %>
+		<% @categories.each do |c| %>
+			<div class= "col-3 p-0 category-image" style="background-image: url(<%= last_article_image(c) %>)">
+				<div class="cover-img d-flex flex-column justify-content-between">
+					<div>
+						<%= link_to "#{c.name}", category_path(c), :class => "text-uppercase article-title header-effect"%>
+						<span class= "effect"></span>
+					</div>
+					<p class= "text-right article-title text-white" ><%= last_article_title(c) %></p>
+				</div>
+			</div>
+		<% end %>
+		</div>
+	</div>
+</main>

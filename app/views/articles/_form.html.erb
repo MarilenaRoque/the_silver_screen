@@ -1,0 +1,48 @@
+
+<div class="form-wrapper">
+  <%= form_with(model: article, local: true) do |form| %>
+    <% if article.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</p>
+
+        <ul>
+          <% article.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :title %><br>
+      <%= form.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= form.label :image %><br>
+      <%= form.file_field :image %>
+    </div>
+    
+    <div class="field">
+      <%= form.label "Categories" %><br>
+      <% @categories.each do |c| %>
+        <span class="mr-2">
+          <%= form.check_box("categories_list", {:multiple => true}, c.id, nil) %>
+          <label><%= h c.name -%></label>
+        </span>
+      <% end %>
+    </div>
+
+    <p><%= link_to "CREATE NEW CATEGORY", new_category_path, :class => "pr-2 navbar-links", target: :_blank %> </p>
+
+
+    <div class="field">
+      <%= form.label :text %><br>
+      <%= form.text_area(:text, cols: 60, rows: 9) %>
+    </div>
+
+    <div class="actions mb-5">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
