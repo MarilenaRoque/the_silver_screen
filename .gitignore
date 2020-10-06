@@ -14,7 +14,7 @@
 !/tmp/.keep
 .env
 /config/secrets/*
-
+/config/cloudinary.yml
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
