@@ -1,0 +1,19 @@
+<div class="row">
+	<% @bookmarks.each_with_index do |bookmark, i| %>
+	  <div class = "col-6 row p-0">
+	    <div class="col-6 image-square order-2 p-0" style="background-image: url(<%= url_for(bookmark.article.image) %>)">
+	    	<div class="cover-img p-0">
+	    	</div>
+	    </div>
+	    <div class ="d-flex flex-column col-6 text-square <%= order(i) %> px-3 pb-3 pt-1 justify-content-between">
+	    	<div>
+		    	<p class="article-title-show"><%= bookmark.article.title %></p>
+				<p><%= truncate("#{bookmark.article.text}", :length => 185) %></p>
+				
+	    	</div>
+
+		</div>
+	  </div>
+	<% end %>
+</div>
+

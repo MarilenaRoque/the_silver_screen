@@ -1,0 +1,29 @@
+
+<div class="row">
+	<% @articles.each_with_index do |article, i| %>
+	  <div class = "col-6 row p-0">
+	    <div class="col-6 image-square order-2 p-0" style="background-image: url(<%= url_for(article.image) %>)">
+	    	<div class="cover-img p-0">
+	    	</div>
+	    </div>
+	    <div class ="d-flex flex-column col-6 text-square <%= order(i) %> px-3 pb-3 pt-1 justify-content-between">
+	    	<div class="article-text">
+		    	<%= link_to "#{@category.name}", category_path(@category), :class => "text-uppercase text_orange header-effect category-name"%>
+		    	<span class= "effect-orange mb-3
+		    	"></span>
+		    	<p class="article-title-show"><%= article.title %></p>
+				<p><%= truncate("#{article.text}", :length => 120) %></p>
+
+	    	</div>
+			<div>
+				<p class="text-right"><strong> <%= article.author.username %></strong></p>
+				<p class="text-right">
+					<span class="mr-2"><%= vote_button(article) %></span>
+					<%= bookmark_button(article) %>
+	    		</p>
+	    	</div>
+
+		</div>
+	  </div>
+	<% end %>
+</div>

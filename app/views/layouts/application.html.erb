@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TheSilverScreen</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <nav class="d-flex justify-content-between align-items-center px-4 py-2">
+      <div class="left">
+        <%= image_tag("icon.svg" , size: "200x60", alt: "Main Icon") %>
+      </div>
+      <%= load_nav %>
+    </nav>
+    <%= notice_display %>
+    <%= alert_display %>
+
+
+    <%= yield %>
+
+    <footer class ="justify-content-between d-flex align-items-center px-4 py-2">
+      <div class="left">
+        <%= image_tag("icon-sec.svg" , size: "150x45", alt: "Main Icon") %>
+      </div>
+      <div>
+      <p class="text-white pt-2"> Made with <span class="text_orange font-weight-bold">&#9825;</span> by Mari Roque Developer</p>
+      </div>
+      <div class="text-white d-flex align-items-center"> 
+        <p class="pt-2 mr-1">Connect with the developer: </p>
+        <a href="https://www.linkedin.com/in/roquemarilena/"><%= image_tag("linkedin.svg" , size: "25", alt: "Linkedin from FlatIcon", :class => "mx-1") %></a>
+        <a href="https://github.com/MarilenaRoque"><%= image_tag("github.svg" , size: "25", alt: "Github from FlatIcon", :class => "mx-1") %></a>
+        <a href="https://twitter.com/MariRoq88285995"><%= image_tag("twitter.svg" , size: "25", alt: "Twitter from FlatIcon", :class => "mx-1") %></a>
+      </div>
+
+    </footer>
+  </body>
+</html>
