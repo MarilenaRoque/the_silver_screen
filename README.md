@@ -112,6 +112,8 @@ or customize them changing the files inside the spec folder.
 - Use the navbar links to explore the features (make sure to create a user to have access to all features)
 
 
+
+
 ## Authors
 
 👤 **Marilena Roque**
