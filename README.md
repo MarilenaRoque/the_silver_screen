@@ -112,6 +112,22 @@ or customize them changing the files inside the spec folder.
 - Use the navbar links to explore the features (make sure to create a user to have access to all features)
 
 
+### Active Storage for Article Images
+
+This project uses local disk for development and Cloudinary for production. If you want to use Cloudinary to store your images you can:
+
+
+> Set your account on [Cloudinary](https://cloudinary.com/)
+> It will Generate an API key and API secret that can be found on your Cloudinary dashboard
+> Replace the generated keys on the `template.env` file and rename it to only `.env`
+> Replace your username on the cloudinary.yml file
+
+To change the kind of storage you should make sure that the environment file inside ./config/environments/<environment>.rb is correct set.
+Example:
+> `config.active_storage.service = :local`   
+> stores the images locally
+> `config.active_storage.service = :cloudinary`   
+> stores the images on cloudinary
 
 
 ## Authors
