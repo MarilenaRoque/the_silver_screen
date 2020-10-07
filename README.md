@@ -1,6 +1,7 @@
 # ThE SilveR ScreeN - A Blog App about Movies and Everything related
 
-> On this project I will develop a blog app, customized with the theme: Movies.
+> On this project I developed a blog app, about movies, using Rails and Bootstrap.
+> On that blog you can sign up to enjoy all the features available, such as: Read and write articles, see them by category, vote and bookmark your favorites ones.
 Design idea by [Nelson Sakwa on Behance](https://www.behance.net/gallery/14500909/liFEsTlye-Magazine-style-Design-Freebie)
 
 ## You can access the blog [HERE](https://blogthesilverscreen.herokuapp.com/)
