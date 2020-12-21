@@ -1,4 +1,4 @@
-require 'rails_helper.rb'
+require 'rails_helper'
 
 RSpec.describe Vote, type: :model do
   describe 'validations with subject' do

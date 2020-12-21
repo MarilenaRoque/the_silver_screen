@@ -1,4 +1,4 @@
-require 'rails_helper.rb'
+require 'rails_helper'
 
 describe 'votes', type: :feature do
   before :each do
