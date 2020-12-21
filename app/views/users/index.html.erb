@@ -1,0 +1,10 @@
+<h2 class="username-title"> Choose your favorite Author: </h2>
+
+<% @users.each do |user| %>
+    <div class="user">
+        <h1 class="username-title"><%= user.username %></h1>
+        <td><%= link_to 'Check Articles >>', user_path(user.id) %></td>
+        </br>
+        </br>
+    </div>
+<% end %>

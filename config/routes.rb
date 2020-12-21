@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :bookmarks, except: [:show, :update, :edit]
   resources :categories
   resources :articles
+  resources :users, only: [:index, :show]
   devise_for :users
   resources :votes, only: [:create, :new, :destroy, :new]
   root to: "categories#index"
