@@ -1,29 +1,32 @@
 
-<%= form_with(model: category, local: true) do |form| %>
-  <% if category.errors.any? %>
-    <div id="error_explanation">
-      <p><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</p>
+<div class="form-wrapper">
+  <%= form_with(model: category, local: true) do |form| %>
+    <% if category.errors.any? %>
+      <div id="error_explanation">
+        <p><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</p>
 
-      <ul>
-        <% category.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name %></br>
+      <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :priority %></br>
+      <%= form.number_field :priority %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %></br>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :priority %></br>
-    <%= form.number_field :priority %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <%= link_to 'Back', categories_path %>
+</div>
 
