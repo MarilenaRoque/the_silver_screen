@@ -1,4 +1,4 @@
-require 'rails_helper.rb'
+require 'rails_helper'
 
 RSpec.describe Bookmark, type: :model do
   let(:user) do

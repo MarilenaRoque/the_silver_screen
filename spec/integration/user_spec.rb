@@ -1,4 +1,4 @@
-require 'rails_helper.rb'
+require 'rails_helper'
 
 describe 'required authentication', type: :feature do
   it 'Should require authetication when root is accessed' do
